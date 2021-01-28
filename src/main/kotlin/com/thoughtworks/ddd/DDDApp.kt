@@ -5,18 +5,23 @@ import com.thoughtworks.ddd.domain.Cart
 import com.thoughtworks.ddd.domain.Item
 
 fun main() {
-    val cart = Cart()
+    val cart1 = Cart()
 
     val ipadPro = Product("IPad Pro")
-    cart.addItem(Item(ipadPro))
+    val item = Item(ipadPro)
+    cart1.addItem(item)
 
-    val heroInkPen = Product("Hero ink Pen")
-    cart.addItem(Item(heroInkPen))
+    val cart2 = Cart()
+    cart2.addItem(item)
+    println("Are carts same? ${cart1 == cart2}")
 
-    val gmCricketBat = Product("GM Cricket bat")
-    cart.addItem(Item(gmCricketBat, 2))
+//    val heroInkPen = Product("Hero ink Pen")
+//    cart1.addItem(Item(heroInkPen))
+//
+//    val gmCricketBat = Product("GM Cricket bat")
+//    cart1.addItem(Item(gmCricketBat, 2))
 
-    cart.removeItem("IPad Pro")
-    println("Deleted items : ${cart.getDeletedItems()}")
+//    cart1.removeItem("IPad Pro")
+//    println("Deleted items : ${cart1.getDeletedItems()}")
 
 }
