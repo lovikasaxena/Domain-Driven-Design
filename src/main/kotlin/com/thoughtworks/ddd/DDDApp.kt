@@ -3,11 +3,13 @@ package com.thoughtworks.ddd
 import com.thoughtworks.ddd.domain.Product
 import com.thoughtworks.ddd.domain.Cart
 import com.thoughtworks.ddd.domain.Item
+import com.thoughtworks.ddd.domain.Price
+import java.math.BigDecimal
 
 fun main() {
     val cart1 = Cart()
 
-    val ipadPro = Product("IPad Pro")
+    val ipadPro = Product("IPad Pro", Price(BigDecimal(35000)))
     val item = Item(ipadPro)
     cart1.addItem(item)
 
