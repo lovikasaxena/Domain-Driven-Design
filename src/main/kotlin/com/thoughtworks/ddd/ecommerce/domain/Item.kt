@@ -1,4 +1,4 @@
-package com.thoughtworks.ddd.domain
+package com.thoughtworks.ddd.ecommerce.domain
 
 data class Item(
     val product: Product,

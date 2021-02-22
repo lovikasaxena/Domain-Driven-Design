@@ -1,11 +1,12 @@
-package com.thoughtworks.ddd.domain
+package com.thoughtworks.ddd.ecommerce.domain
 
 import java.math.BigDecimal
 import java.util.*
 
 data class Product(
     val productName: String,
-    val price: Price
+    val price: Price,
+    val weight: Double
 )
 
 data class Price(

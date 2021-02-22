@@ -1,11 +1,12 @@
-package com.thoughtworks.ddd.domain
+package com.thoughtworks.ddd.ecommerce.domain
 
 import java.util.*
 
 class Cart{
-    private val items: MutableList<Item> = mutableListOf()
+    val items: MutableList<Item> = mutableListOf()
     private val deletedItems: Stack<Item> = Stack()
     private val uuid= UUID.randomUUID().toString()
+    private var isCheckedOut: Boolean = false
 
     fun getDeletedItems(): Stack<Item> {
         return this.deletedItems
@@ -13,6 +14,7 @@ class Cart{
 
     fun addItem(item: Item) {
         items.add(item)
+        this.isCheckedOut = false
         println("Item added to cart: $item. Cart now has ${items.size} items")
     }
 
@@ -32,5 +34,21 @@ class Cart{
     }
 
     override fun hashCode(): Int = super.hashCode()
+
+    fun checkout(): Order {
+        var products = mutableListOf<Product>()
+        this.items.forEach {
+            for(i in 1..it.quantity) {
+                products.add(it.product)
+            }
+        }
+        val order = Order(products)
+        this.isCheckedOut = true
+
+        println("Cart checked out and created order")
+        return order
+    }
+
+    fun markCheckout()  { this.isCheckedOut = true }
 
 }

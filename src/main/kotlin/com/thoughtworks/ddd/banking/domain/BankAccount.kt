@@ -1,4 +1,4 @@
-package com.thoughtworks.ddd.domain.banking
+package com.thoughtworks.ddd.banking.domain
 
 class BankAccount(
     private val accountNumber: String,

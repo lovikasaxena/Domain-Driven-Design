@@ -1,6 +1,6 @@
 package com.thoughtworks.ddd
 
-import com.thoughtworks.ddd.domain.banking.Customer
+import com.thoughtworks.ddd.banking.domain.Customer
 
 class CustomerDomainService {
 
