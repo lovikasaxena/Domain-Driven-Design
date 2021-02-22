@@ -4,6 +4,8 @@ import com.thoughtworks.ddd.domain.Product
 import com.thoughtworks.ddd.domain.Cart
 import com.thoughtworks.ddd.domain.Item
 import com.thoughtworks.ddd.domain.Price
+import com.thoughtworks.ddd.domain.banking.BankAccount
+import com.thoughtworks.ddd.domain.banking.Customer
 import java.math.BigDecimal
 
 fun main() {
@@ -25,5 +27,9 @@ fun main() {
 
 //    cart1.removeItem("IPad Pro")
 //    println("Deleted items : ${cart1.getDeletedItems()}")
+
+    val customer = Customer("123")
+    customer.addAccount(BankAccount("000213", "123"))
+    customer.updateAddress("New address")
 
 }
